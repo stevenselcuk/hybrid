@@ -19,7 +19,7 @@ let theToken = ''
 let verificationToken = ''
 
 const userCredentials = {
-  email: 'admin@admin.com',
+  email: 'steven@onion.com',
   password: '12345'
 }
 
