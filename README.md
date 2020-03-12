@@ -11,8 +11,14 @@
 
 
 <p align="center">
-   <h1>hybridAPI Boilerplate (NodeJS w/GraphQL & Express)</em></h1>
+   <h1>hybridAPI Boilerplate</em> (NodeJS w/GraphQL & Express)</h1>
 </p>
+
+<p align="center">
+   Starting point for your next awesome API  Hybrid gives you the best of both worlds REST and GraphQL with awesome stack. Just keep reading this readme file to discovering it.
+</p>
+
+--- 
 
 [![Build Status](https://travis-ci.com/stevenselcuk/hybrid.svg?branch=master)](https://travis-ci.com/stevenselcuk/hybrid) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c56516433ce4306a945a0725189c752)](https://www.codacy.com/manual/stevenjselcuk/hybrid?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stevenselcuk/hybrid&amp;utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/9d922e502c35dc58c8a7/maintainability)](https://codeclimate.com/github/stevenselcuk/hybrid/maintainability)
 
@@ -23,9 +29,7 @@ REST API Documentation:  [https://hybridapi.herokuapp.com/api-docs/](https://hyb
 JS Documentation:  [https://hybridapi.herokuapp.com/docs](https://hybridapi.herokuapp.com/docs) (JSDoc)
 
 
-<p align="center">
-   Starting point for your next awesome API  Hybrid gives you the best of both worlds REST and GraphQL with awesome stack. Just keep reading this readme file to discovering it.
-</p>
+
 
 # 🔥Features
 
