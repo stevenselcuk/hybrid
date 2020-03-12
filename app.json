@@ -1,0 +1,19 @@
+{
+	"name": "Hybrid API",
+	"description": "Your starting point for next API",
+	"repository": "https://github.com/stevenselcuk/Coeus",
+	"logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+	"keywords": ["node", "express", "heroku", "graphql", "boilerplate"],
+	"image": "heroku/nodejs",
+	"engines": {
+		"node": "12.10.0",
+		"yarn": "1.17.3"
+	},
+	"environments": {
+	"test": {
+		"scripts": {
+			"test": "NODE_ENV=test nyc ./node_modules/.bin/mocha ./test/**/*.js"
+		}
+	}
+}
+}
