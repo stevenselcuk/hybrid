@@ -1,0 +1,8 @@
+--colors
+--reporter lcov
+--timeout 12000
+--check-leaks
+--globals io
+--require @babel/register
+--require ./test/helpers/globals.helper
+--exit
