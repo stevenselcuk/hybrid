@@ -14,7 +14,7 @@
    <h1>hybrid</em></h1>
 </p>
 
-[![Build Status](https://travis-ci.com/stevenselcuk/hybrid.svg?branch=master)](https://travis-ci.com/stevenselcuk/hybrid)
+[![Build Status](https://travis-ci.com/stevenselcuk/hybrid.svg?branch=master)](https://travis-ci.com/stevenselcuk/hybrid) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c56516433ce4306a945a0725189c752)](https://www.codacy.com/manual/stevenjselcuk/hybrid?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stevenselcuk/hybrid&amp;utm_campaign=Badge_Grade)
 
 <p align="center">
    Starting point for your awesome project. Hybrid gives you best of two world. REST and GraphQL with awesome stack. Just keep reading this readme file to discovering it.
