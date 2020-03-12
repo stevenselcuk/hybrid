@@ -139,9 +139,9 @@ const hash = (user, salt, next) => {
     return next()
   })
 }
-
+// eslint-disable-line
 UserSchema.pre('save', function(next) {
-  // eslint-disable-line
+
   const that = this
   const SALT_FACTOR = 10
   if (!that.isModified('password')) {
@@ -149,9 +149,9 @@ UserSchema.pre('save', function(next) {
   }
   return hash(that, SALT_FACTOR, next)
 })
-
+// eslint-disable-line
 UserSchema.methods.comparePassword = function(passwordAttempt, cb) {
-  // eslint-disable-line
+
   bcrypt.compare(passwordAttempt, this.password, (err, isMatch) =>
     err ? cb(err) : cb(null, isMatch)
   )

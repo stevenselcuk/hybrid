@@ -1,7 +1,7 @@
 import express from 'express'
 import session from 'express-session'
 import helmet from 'helmet'
-import cors from 'cors'
+// import cors from 'cors'
 import passport from 'passport'
 import rateLimit from 'express-rate-limit'
 import compression from 'compression'
@@ -13,7 +13,6 @@ import favicon from 'serve-favicon'
 import path from 'path'
 import routes from './core/express'
 import conf from './core/config'
-import redis from './core/redis'
 import { log } from './core/logger'
 
 const MongoStore = require('connect-mongo')(session)

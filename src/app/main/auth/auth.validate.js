@@ -28,29 +28,6 @@ export const CheckLogin = [
   }
 ]
 
-export const CheckQRLogin = [
-  check('jwt')
-    .exists()
-    .withMessage('MISSING')
-    .not()
-    .isEmpty()
-    .withMessage('IS_EMPTY')
-    .withMessage('No JWT Token'),
-  check('client')
-    .exists()
-    .withMessage('MISSING')
-    .not()
-    .isEmpty()
-    .withMessage('IS_EMPTY')
-    .isLength({
-      min: 5
-    })
-    .withMessage('No Client ID'),
-  (req, res, next) => {
-    theValidationResult(req, res, next)
-  }
-]
-
 /**
  * Validates forgot password request
  */

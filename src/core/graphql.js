@@ -1,4 +1,4 @@
-import { ApolloServer, AuthenticationError } from 'apollo-server-express'
+import { ApolloServer } from 'apollo-server-express'
 import { PubSub } from 'graphql-subscriptions'
 import { RedisCache } from 'apollo-server-cache-redis'
 import responseCachePlugin from 'apollo-server-plugin-response-cache'

@@ -1,7 +1,7 @@
 import { ContextMiddleware } from '~/middleware/utils'
 import {
   userTest,
-  getUser,
+//  getUser,
   getUserNotificationCount,
   getAllUsers,
   getUserUnreadedNotifications,

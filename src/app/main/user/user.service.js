@@ -1,8 +1,9 @@
 import User from './user.model'
 import { buildErrObject } from '~/middleware/utils'
-import { log } from '~/core/logger'
 
 const getAllUsers = async (args, context) => {
+  console.log(args)
+  console.log(context)
   return new Promise((resolve, reject) => {
     try {
       User.find({}, (err, items) => {
@@ -70,17 +71,6 @@ const getUserUndoneTasks = async (args, context) => {
       resolve({ tasks: unDonetasks })
     } catch (err) {
       reject(buildErrObject(422, 'No tasks 🤷‍♂️'))
-    }
-  })
-}
-
-const addAircraft = async args => {
-  return new Promise((resolve, reject) => {
-    try {
-      console.log(args)
-      resolve({ registration: 'stuff' })
-    } catch (err) {
-      reject(buildErrObject(422, 'ERROR_WITH_FILTER'))
     }
   })
 }

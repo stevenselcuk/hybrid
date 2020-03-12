@@ -12,7 +12,6 @@ import {
 
 import {
   CheckLogin,
-  CheckQRLogin,
   CheckForgotPassword,
   CheckResetPassword
 } from './auth.validate'

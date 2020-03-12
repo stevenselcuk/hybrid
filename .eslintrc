@@ -29,6 +29,7 @@
     "import/no-cycle": [1, { "maxDepth": 2 }],
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
+    "func-names": "off",
     "no-unused-vars": "warn",
     "prettier/prettier": "off",
     "no-console": "off",
