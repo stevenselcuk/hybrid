@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {},
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        "rootPathPrefix": "~",
+        "rootPathSuffix": "src"
+      }
+    }
+  },
+  "rules": {
+    "import/no-cycle": [1, { "maxDepth": 2 }],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "warn",
+    "prettier/prettier": "off",
+    "no-console": "off",
+    "max-len": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-underscore-dangle": "off",
+    "object-curly-newline": "off",
+    "consistent-return": "off",
+  }
+}

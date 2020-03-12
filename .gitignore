@@ -1,0 +1,25 @@
+# I am on MacOS
+.DS_Store
+# Dependency directory
+node_modules
+# Not my .env config
+.env
+# Not my config.js
+config.json
+# Not production ready files
+dist
+build
+# Not my logs
+*.log
+# No locks too
+yarn-error.log
+# No nyc
+.nyc_output
+*.log.gz
+iamdone-help.md
+# Not my logs
+logs
+# No coverage reports too
+coverage
+# Not my uploads motherfucker
+public/uploads/**

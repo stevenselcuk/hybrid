@@ -1,0 +1,7 @@
+node_modules
+logs
+docs
+dist
+apidoc
+.nyc_output
+.imdone
