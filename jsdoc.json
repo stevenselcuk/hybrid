@@ -1,0 +1,28 @@
+{
+    "tags": {
+        "allowUnknownTags": false
+    },
+    "source": {
+        "include": "src/",
+        "excludePattern": "(node_modules/|docs|dist|tools|public)"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "jsdoc-mermaid"
+    ],
+    "opts": {
+        "template": "node_modules/docdash",
+        "encoding": "utf8",
+        "destination": "./docs",
+        "recurse": true,
+        "verbose": true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "docdash": {
+        "search":true,
+        "collapse":true
+    }
+}

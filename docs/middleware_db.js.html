@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>middleware/db.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-middleware_db.html">middleware/db</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~buildSort">buildSort</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~checkQueryString">checkQueryString</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~cleanPaginationID">cleanPaginationID</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~createItem">createItem</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~deleteItemIt'sgood.huh?Weneedsoftdeletes.">deleteItem
+
+It's good. huh? We need soft deletes.</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getAllItems">getAllItems</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getItem">getItem</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getItems">getItems</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~listInitOptions">listInitOptions</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~updateItem">updateItem</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#aircraftExists">aircraftExists</a></li><li><a href="global.html#blockIsExpired">blockIsExpired</a></li><li><a href="global.html#blockUser">blockUser</a></li><li><a href="global.html#buildErrObject">buildErrObject</a></li><li><a href="global.html#buildSuccObject">buildSuccObject</a></li><li><a href="global.html#checkAircraftUpdate">checkAircraftUpdate</a></li><li><a href="global.html#checkCreateAircraft">checkCreateAircraft</a></li><li><a href="global.html#checkDeleteAircraft">checkDeleteAircraft</a></li><li><a href="global.html#checkDeleteUser">checkDeleteUser</a></li><li><a href="global.html#CheckForgotPassword">CheckForgotPassword</a></li><li><a href="global.html#checkGetAircraft">checkGetAircraft</a></li><li><a href="global.html#checkGetUser">checkGetUser</a></li><li><a href="global.html#CheckLogin">CheckLogin</a></li><li><a href="global.html#checkLoginAttemptsAndBlockExpires">checkLoginAttemptsAndBlockExpires</a></li><li><a href="global.html#checkNewUser">checkNewUser</a></li><li><a href="global.html#checkPassword">checkPassword</a></li><li><a href="global.html#checkPermissions">checkPermissions</a></li><li><a href="global.html#CheckResetPassword">CheckResetPassword</a></li><li><a href="global.html#checkUpdateUser">checkUpdateUser</a></li><li><a href="global.html#checkVerify">checkVerify</a></li><li><a href="global.html#createAircraft">createAircraft</a></li><li><a href="global.html#createNewUser">createNewUser</a></li><li><a href="global.html#createUser">createUser</a></li><li><a href="global.html#decrypt">decrypt</a></li><li><a href="global.html#deleteAircraft">deleteAircraft</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#emailExists">emailExists</a></li><li><a href="global.html#emailExistsExcludingMyself">emailExistsExcludingMyself</a></li><li><a href="global.html#encrypt">encrypt</a></li><li><a href="global.html#findForgotPassword">findForgotPassword</a></li><li><a href="global.html#findUser">findUser</a></li><li><a href="global.html#findUserById">findUserById</a></li><li><a href="global.html#findUserToResetPassword">findUserToResetPassword</a></li><li><a href="global.html#forgotPassword">forgotPassword</a></li><li><a href="global.html#forgotPasswordResponse">forgotPasswordResponse</a></li><li><a href="global.html#getAircraft">getAircraft</a></li><li><a href="global.html#getAircrafts">getAircrafts</a></li><li><a href="global.html#getAllAircrafts">getAllAircrafts</a></li><li><a href="global.html#getBrowserInfo">getBrowserInfo</a></li><li><a href="global.html#getCountry">getCountry</a></li><li><a href="global.html#getIP">getIP</a></li><li><a href="global.html#getRefreshToken">getRefreshToken</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#getUsers">getUsers</a></li><li><a href="global.html#handleError">handleError</a></li><li><a href="global.html#isIDGood">isIDGood</a></li><li><a href="global.html#itemAlreadyExists">itemAlreadyExists</a></li><li><a href="global.html#itemNotFound">itemNotFound</a></li><li><a href="global.html#jwtExtractor">jwtExtractor</a></li><li><a href="global.html#jwtLogin">jwtLogin</a></li><li><a href="global.html#jwtOptions">jwtOptions</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#markResetPasswordAsUsed">markResetPasswordAsUsed</a></li><li><a href="global.html#onlyCanUse">onlyCanUse</a></li><li><a href="global.html#passwordsDoNotMatch">passwordsDoNotMatch</a></li><li><a href="global.html#prepareToSendEmail">prepareToSendEmail</a></li><li><a href="global.html#qrLogin">qrLogin</a></li><li><a href="global.html#removeExtensionFromFile">removeExtensionFromFile</a></li><li><a href="global.html#resetPassword">resetPassword</a></li><li><a href="global.html#returnRegisterToken">returnRegisterToken</a></li><li><a href="global.html#saveForgotPassword">saveForgotPassword</a></li><li><a href="global.html#saveLoginAttemptsToDB">saveLoginAttemptsToDB</a></li><li><a href="global.html#saveUserAccessAndReturnToken">saveUserAccessAndReturnToken</a></li><li><a href="global.html#sendEmail">sendEmail</a></li><li><a href="global.html#sendRegistrationEmailMessage">sendRegistrationEmailMessage</a></li><li><a href="global.html#sendResetPasswordEmailMessage">sendResetPasswordEmailMessage</a></li><li><a href="global.html#setUserInfo">setUserInfo</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#theValidationResult">theValidationResult</a></li><li><a href="global.html#updateAircraft">updateAircraft</a></li><li><a href="global.html#updatePassword">updatePassword</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#userIsBlocked">userIsBlocked</a></li><li><a href="global.html#verificationExists">verificationExists</a></li><li><a href="global.html#verify">verify</a></li><li><a href="global.html#verifyTheToken">verifyTheToken</a></li><li><a href="global.html#verifyUser">verifyUser</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">middleware/db.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * db actions and functions.
+ * @module middleware/db
+ */
+
+import { buildErrObject, itemNotFound, parser } from './utils'
+import { log } from '~/core/logger'
+/**
+ * Builds sorting
+ * @param {string} sort - field to sort from
+ * @param {number} order - order for query (1,-1)
+ */
+const buildSort = (sort, order) => {
+  const sortBy = {}
+  sortBy[sort] = order
+  return sortBy
+}
+
+/**
+ * Hack for mongoose-paginate, removes 'id' from results
+ * @param {Object} result - result object
+ */
+const cleanPaginationID = result => {
+  result.docs.map(element => delete element.id) // eslint-disable-line
+  return result
+}
+
+/**
+ * Builds initial options for query
+ * @param {Object} query - query object
+ * @TODO For now need "populate" option but we have not...
+ * @SEE for more option passing https://github.com/WebGangster/mongoose-paginate-v2#readme
+ */
+const listInitOptions = async req => {
+  return new Promise(resolve => {
+    const select = req.query.select || ''
+    const order = req.query.order || -1
+    const sort = req.query.sort || 'createdAt'
+    const sortBy = buildSort(sort, order)
+    const page = parseInt(req.query.page, 10) || 1
+    const limit = parseInt(req.query.limit, 10) || 5
+    const options = {
+      select,
+      sort: sortBy,
+      lean: true,
+      page,
+      limit
+    }
+    resolve(options)
+  })
+}
+
+const checkItemIsExist = async (model, _id) => {
+  return new Promise((resolve, reject) => {
+    model.findOne({ _id }, (err, result) => {
+      if (result) {
+        resolve(true)
+      } else reject(buildErrObject(422, 'NOTHIN FOUND'))
+    })
+  })
+}
+/**
+ * Checks the query string for filtering records
+ * query.filter should be the text to search (string)
+ * query.fields should be the fields to search into (array)
+ * @param {Object} query - query object
+ */
+const checkQueryString = async query => {
+  // eslint-disable-line
+  return new Promise((resolve, reject) => {
+    try {
+      if (
+        typeof query.filter !== 'undefined' &amp;&amp;
+        typeof query.fields !== 'undefined'
+      ) {
+        const data = {
+          $or: []
+        }
+        const array = []
+        // Takes fields param and builds an array by splitting with ','
+        const arrayFields = query.fields.split(',')
+        // Adds SQL Like %word% with regex
+        arrayFields.map(item => {
+          return array.push({
+            [item]: {
+              $regex: new RegExp(query.filter, 'i')
+            }
+          })
+        })
+        // Puts array result in data
+        data.$or = array
+        resolve(data)
+      } else {
+        resolve({})
+      }
+    } catch (err) {
+      reject(buildErrObject(422, 'ERROR_WITH_FILTER'))
+    }
+  })
+}
+
+/**
+ * Gets items from database
+ * @param {Object} req - request object
+ * @param {Object} query - query object
+ */
+const getAllItems = async (req, model, query) => {
+  const options = await listInitOptions(req)
+  return new Promise((resolve, reject) => {
+    model.paginate(query, options, (err, items) => {
+      if (err) {
+        reject(buildErrObject(422, err.message))
+      }
+      resolve(cleanPaginationID(items))
+    })
+  })
+}
+
+/**
+ * Gets items from database
+ * @param {Object} req - request object
+ * @param {Object} query - query object
+ * Now supports find and select
+ * @TODO We also need population, limit etc.
+ * @SEE https://github.com/leodinas-hao/mongoose-query-parser#readme
+ */
+const getItems = async (req, model, query) => {
+  const { filter, select } = parser.parse(query)
+  return new Promise((resolve, reject) => {
+    model
+      .find(filter)
+      .select(select)
+      .exec((err, result) => {
+        if (err) {
+          reject(buildErrObject(422, err.message))
+        }
+        resolve(result)
+      })
+  })
+}
+
+const getDeletedItems = async model => {
+  return new Promise((resolve, reject) => {
+    model.findDeleted((err, result) => {
+      if (err) {
+        reject(buildErrObject(422, err.message))
+      }
+      resolve(result)
+    })
+  })
+}
+
+/**
+ * Gets item from database by id
+ * @param {string} id - item id
+ */
+const getItem = async (id, model) => {
+  return new Promise((resolve, reject) => {
+    model.findById(id)
+    .exec((err, result) => {
+      if (err) {
+        reject(buildErrObject(422, err.message))
+      }
+      resolve(result)
+    })
+  })
+}
+
+/**
+ * Creates a new item in database
+ * @param {Object} req - request object
+ */
+const createItem = async (req, model) => {
+  return new Promise((resolve, reject) => {
+    model.create(req.body, (err, item) => {
+      if (err) {
+        reject(buildErrObject(422, err.message))
+      }
+      resolve(item)
+      log.info(`Item ${item.id} has successfully created.`)
+    })
+  })
+}
+
+/**
+ * [deleteItem Soft deletes with given ObjectID and records who did this, when did this...]
+ *
+ * @method deleteItem
+ *
+ * It's good. huh? We need soft deletes.
+ * @see for details : https://github.com/dsanel/mongoose-delete
+ *
+ * @param  {string}   itemID The item that we want to (soft) delete.
+ * @param  {string}   deleterID Who wants to delete
+ * @param  {object}   model In which mongodb model
+ *
+ * @return {Promise} If successfully returns deleted: true
+ */
+const deleteItem = async (itemID, deleterID, model) => {
+  return new Promise((resolve, reject) => {
+    model.findById(itemID, (err, item) => {
+      if (err) {
+        reject(buildErrObject(422, err.message))
+      }
+      if (item) {
+        item.delete(deleterID, () => {
+          resolve({ deleted: true })
+          log.info(`Item ${itemID} has successfully deleted.`)
+        })
+      } else {
+        reject(buildErrObject(422, 'ITEM HAS ALREADY DELETED.'))
+      }
+    })
+  })
+}
+
+const restoreItem = async (itemID, model) => {
+  return new Promise((resolve, reject) => {
+    model.findById(itemID, (err, item) => {
+      itemNotFound(err, item, reject, 'NOT_FOUND')
+      item.restore(() => {
+        log.info(`Item ${itemID} has successfully restored.`)
+        resolve({ restored: true })
+      })
+    })
+  })
+}
+
+/**
+ * Updates an item in database by id
+ * @param {string} id - item id
+ * @param {Object} req - request object
+ */
+const updateItem = async (id, model, req) => {
+  return new Promise((resolve, reject) => {
+    model.findByIdAndUpdate(
+      id,
+      req,
+      {
+        new: true,
+        runValidators: true,
+        context: 'query'
+      },
+      (err, item) => {
+        itemNotFound(err, item, reject, 'NOT_FOUND')
+        resolve(item)
+        log.info(`Item ${id} has successfully updated.`)
+      }
+    )
+  })
+}
+
+export {
+  updateItem,
+  restoreItem,
+  deleteItem,
+  createItem,
+  getAllItems,
+  getItems,
+  checkItemIsExist,
+  getDeletedItems,
+  getItem,
+  checkQueryString
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Mar 12 2020 20:29:01 GMT+0300 (GMT+03:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

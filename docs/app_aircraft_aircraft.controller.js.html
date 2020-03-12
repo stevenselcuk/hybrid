@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>app/aircraft/aircraft.controller.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-middleware_db.html">middleware/db</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~buildSort">buildSort</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~checkQueryString">checkQueryString</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~cleanPaginationID">cleanPaginationID</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~createItem">createItem</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~deleteItemIt'sgood.huh?Weneedsoftdeletes.">deleteItem
+
+It's good. huh? We need soft deletes.</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getAllItems">getAllItems</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getItem">getItem</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~getItems">getItems</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~listInitOptions">listInitOptions</a></li><li data-type='method' style='display: none;'><a href="module-middleware_db.html#~updateItem">updateItem</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#aircraftExists">aircraftExists</a></li><li><a href="global.html#blockIsExpired">blockIsExpired</a></li><li><a href="global.html#blockUser">blockUser</a></li><li><a href="global.html#buildErrObject">buildErrObject</a></li><li><a href="global.html#buildSuccObject">buildSuccObject</a></li><li><a href="global.html#checkAircraftUpdate">checkAircraftUpdate</a></li><li><a href="global.html#checkCreateAircraft">checkCreateAircraft</a></li><li><a href="global.html#checkDeleteAircraft">checkDeleteAircraft</a></li><li><a href="global.html#checkDeleteUser">checkDeleteUser</a></li><li><a href="global.html#CheckForgotPassword">CheckForgotPassword</a></li><li><a href="global.html#checkGetAircraft">checkGetAircraft</a></li><li><a href="global.html#checkGetUser">checkGetUser</a></li><li><a href="global.html#CheckLogin">CheckLogin</a></li><li><a href="global.html#checkLoginAttemptsAndBlockExpires">checkLoginAttemptsAndBlockExpires</a></li><li><a href="global.html#checkNewUser">checkNewUser</a></li><li><a href="global.html#checkPassword">checkPassword</a></li><li><a href="global.html#checkPermissions">checkPermissions</a></li><li><a href="global.html#CheckResetPassword">CheckResetPassword</a></li><li><a href="global.html#checkUpdateUser">checkUpdateUser</a></li><li><a href="global.html#checkVerify">checkVerify</a></li><li><a href="global.html#createAircraft">createAircraft</a></li><li><a href="global.html#createNewUser">createNewUser</a></li><li><a href="global.html#createUser">createUser</a></li><li><a href="global.html#decrypt">decrypt</a></li><li><a href="global.html#deleteAircraft">deleteAircraft</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#emailExists">emailExists</a></li><li><a href="global.html#emailExistsExcludingMyself">emailExistsExcludingMyself</a></li><li><a href="global.html#encrypt">encrypt</a></li><li><a href="global.html#findForgotPassword">findForgotPassword</a></li><li><a href="global.html#findUser">findUser</a></li><li><a href="global.html#findUserById">findUserById</a></li><li><a href="global.html#findUserToResetPassword">findUserToResetPassword</a></li><li><a href="global.html#forgotPassword">forgotPassword</a></li><li><a href="global.html#forgotPasswordResponse">forgotPasswordResponse</a></li><li><a href="global.html#getAircraft">getAircraft</a></li><li><a href="global.html#getAircrafts">getAircrafts</a></li><li><a href="global.html#getAllAircrafts">getAllAircrafts</a></li><li><a href="global.html#getBrowserInfo">getBrowserInfo</a></li><li><a href="global.html#getCountry">getCountry</a></li><li><a href="global.html#getIP">getIP</a></li><li><a href="global.html#getRefreshToken">getRefreshToken</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#getUsers">getUsers</a></li><li><a href="global.html#handleError">handleError</a></li><li><a href="global.html#isIDGood">isIDGood</a></li><li><a href="global.html#itemAlreadyExists">itemAlreadyExists</a></li><li><a href="global.html#itemNotFound">itemNotFound</a></li><li><a href="global.html#jwtExtractor">jwtExtractor</a></li><li><a href="global.html#jwtLogin">jwtLogin</a></li><li><a href="global.html#jwtOptions">jwtOptions</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#markResetPasswordAsUsed">markResetPasswordAsUsed</a></li><li><a href="global.html#onlyCanUse">onlyCanUse</a></li><li><a href="global.html#passwordsDoNotMatch">passwordsDoNotMatch</a></li><li><a href="global.html#prepareToSendEmail">prepareToSendEmail</a></li><li><a href="global.html#qrLogin">qrLogin</a></li><li><a href="global.html#removeExtensionFromFile">removeExtensionFromFile</a></li><li><a href="global.html#resetPassword">resetPassword</a></li><li><a href="global.html#returnRegisterToken">returnRegisterToken</a></li><li><a href="global.html#saveForgotPassword">saveForgotPassword</a></li><li><a href="global.html#saveLoginAttemptsToDB">saveLoginAttemptsToDB</a></li><li><a href="global.html#saveUserAccessAndReturnToken">saveUserAccessAndReturnToken</a></li><li><a href="global.html#sendEmail">sendEmail</a></li><li><a href="global.html#sendRegistrationEmailMessage">sendRegistrationEmailMessage</a></li><li><a href="global.html#sendResetPasswordEmailMessage">sendResetPasswordEmailMessage</a></li><li><a href="global.html#setUserInfo">setUserInfo</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#theValidationResult">theValidationResult</a></li><li><a href="global.html#updateAircraft">updateAircraft</a></li><li><a href="global.html#updatePassword">updatePassword</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#userIsBlocked">userIsBlocked</a></li><li><a href="global.html#verificationExists">verificationExists</a></li><li><a href="global.html#verify">verify</a></li><li><a href="global.html#verifyTheToken">verifyTheToken</a></li><li><a href="global.html#verifyUser">verifyUser</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">app/aircraft/aircraft.controller.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// import { matchedData } from 'express-validator'
+import Aircraft from './aircraft.model'
+import {
+  handleError,
+  buildErrObject,
+  buildSuccObject,
+  itemAlreadyExists,
+  isIDGood
+} from '~/middleware/utils'
+import {
+  updateItem,
+  restoreItem,
+  deleteItem,
+  createItem,
+  getAllItems,
+  getItems,
+  getDeletedItems,
+  getItem,
+  checkQueryString
+} from '~/middleware/db'
+
+/**
+ * Checks if a city already exists in database
+ * @param {string} name - name of item
+ */
+const aircraftExists = async registration => {
+  return new Promise((resolve, reject) => {
+    Aircraft.findOne(
+      {
+        registration
+      },
+      (err, item) => {
+        itemAlreadyExists(err, item, reject, 'AIRCRAFT_ALREADY_EXISTS')
+        resolve(false)
+      }
+    )
+  })
+}
+
+/**
+ * Gets all items from database
+ */
+export const getAllAircrafts = async (req, res) => {
+  return new Promise((resolve, reject) => {
+    Aircraft.find(
+      {},
+      '-updatedAt -createdAt',
+      {
+        sort: {
+          totalFlightCycle: -1
+        }
+      },
+      (err, items) => {
+        if (err) {
+          reject(buildErrObject(422, err.message))
+        }
+        res.status(200).json(buildSuccObject(items))
+      }
+    )
+  })
+}
+
+export const queryAircrafts = async (req, res) => {
+  try {
+    const query = await checkQueryString(req.query)
+    res
+      .status(200)
+      .json(buildSuccObject(await getAllItems(req, Aircraft, query)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+/**
+ * Get items function called by route
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+export const getAircrafts = async (req, res) => {
+  try {
+    res
+      .status(200)
+      .json(buildSuccObject(await getItems(req, Aircraft, req.query)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+/**
+ * Get item function called by route
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+export const getAircraft = async (req, res) => {
+  try {
+    const id = await isIDGood(req.body.id)
+    res.status(200).json(buildSuccObject(await getItem(id, Aircraft)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+export const getDeletedAircrafts = async (req, res) => {
+  try {
+    res.status(200).json(buildSuccObject(await getDeletedItems(Aircraft)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+/**
+ * Update item function called by route
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+export const updateAircraft = async (req, res) => {
+  try {
+    const id = await isIDGood(req.body.id)
+    res
+      .status(200)
+      .json(buildSuccObject(await updateItem(id, Aircraft, req.body)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+/**
+ * Create item function called by route
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+export const createAircraft = async (req, res) => {
+  try {
+    const doesAircraftExists = await aircraftExists(req.body.registration)
+    if (!doesAircraftExists) {
+      res.status(201).json(buildSuccObject(await createItem(req, Aircraft)))
+    }
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+/**
+ * Delete item function called by route
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+export const deleteAircraft = async (req, res) => {
+  try {
+    const ItemId = await isIDGood(req.body.id)
+    const DeleterId = await isIDGood(req.user._id)
+    res
+      .status(200)
+      .json(buildSuccObject(await deleteItem(ItemId, DeleterId, Aircraft)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+
+export const restoreAircraft = async (req, res) => {
+  try {
+    const ItemId = await isIDGood(req.body.id)
+    res.status(200).json(buildSuccObject(await restoreItem(ItemId, Aircraft)))
+  } catch (error) {
+    handleError(res, error)
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Mar 12 2020 20:29:01 GMT+0300 (GMT+03:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
