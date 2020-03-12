@@ -214,4 +214,6 @@ app.get('/clear_cookie', (req, res) => {
 
 app.use('/__', routes)
 
+app.use('/docs', express.static('docs'))
+
 export default app
