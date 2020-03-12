@@ -187,7 +187,19 @@
 				"webpack-node-externals": "^1.7.2",
 				"webpack-shell-plugin": "^0.5.0",
 				"webpackbar": "^4.0.0"
-		},
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged",
+        "pre-push": "yarn test"
+      }
+    },
+    "lint-staged": {
+      "*.{js}": [
+        "eslint --fix ./src",
+        "git add"
+      ]
+    },
 		"engines": {
 				"node": "^13.7.0",
 				"npm": "^6.13.6",
@@ -205,18 +217,5 @@
 				"execMap": {
 						"js": "babel-node"
 				}
-		},
-		"husky": {
-				"hooks": {
-						"pre-push": "yarn test",
-						"pre-commit": "lint-staged"
-				}
-		},
-		"lint-staged": {
-				"*.js": [
-						"prettier --write",
-						"eslint --fix",
-						"git add"
-				]
 		}
 }
