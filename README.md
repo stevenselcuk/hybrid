@@ -14,54 +14,62 @@
    <h1>hybrid</em></h1>
 </p>
 
+[![Build Status](https://travis-ci.com/stevenselcuk/hybrid.svg?branch=master)](https://travis-ci.com/stevenselcuk/hybrid)
+
 <p align="center">
    Starting point for your awesome project. Hybrid gives you best of two world. REST and GraphQL with awesome stack. Just keep reading this readme file to discovering it.
 </p>
 
-# Features
+# 🔥Features
 
-Development (w/ Reloading)
-👉 Webpack (with Babel & Eslint Loader)
-👉 Nodemon
-👉 Winston for logging (console and log file)
+### 🏭Development (w/ Reloading)
 
-Building
-👉 Webpack & Babel
+- Webpack (with Babel & Eslint Loader)
+- Nodemon
+- Winston for logging (console and log file)
 
-Deploy
-👉 Dockerized
-👉 PM2
-👉 Heroku ready
+### 🏢Building
 
-Testing
-👉Mocha & Chai (with auth & user tests)
-👉Coverage ready with NYC
-👉Codecov ready
+- Webpack & Babel
 
-CI 
-👉 Travis
+### 📲Deploy
 
-Documentation
-👉 Swagger UI & server
-👉 JSDoc (a classic)
-👉 Postman ( I ❤️it)
+- Dockerized
+- PM2
+- Heroku ready
 
-Tools
-👉 Seeding
+### 🧪Testing
+
+- Mocha & Chai (with auth & user tests)
+- Coverage ready with NYC
+- Codecov ready
+
+### 🚐CI 
+- Travis
+
+### 📚Documentation
+
+- Swagger UI & server
+- JSDoc (a classic)
+- Postman ( I ❤️it)
+
+### 🛠Tools
+
+- Seeding
 
 # Tech
 
-✅ Eslint
-✅ Prettier
-✅ Babel 7
-✅ Webpack
-✅ Apollo Server
-✅ Express
-✅ MongoDB with Mongoose
-✅ Redis Cache (on both of REST & GrapQL)
-✅ Multer
-✅ Passport
-✅ Jwt
+- Eslint
+- Prettier
+- Babel 7
+- Webpack
+- Apollo Server
+- Express
+- MongoDB with Mongoose
+- Redis Cache (on both of REST & GrapQL)
+- Multer
+- Passport
+- Jwt
 
 
 
@@ -81,11 +89,9 @@ yarn
 yarn seed
 
 // For using Nodemon
-
 yarn dev
 
 // or using Webpack
-
 yarn dev:webpack
 
 // That's all
