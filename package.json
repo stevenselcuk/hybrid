@@ -12,7 +12,7 @@
 				"build:babel": "yarn clean && babel -d ./build ./src -s",
 				"build": "NODE_ENV=production webpack --config ./webpack.config.production.babel.js",
 				"start:babel": "NODE_ENV=production node build/server.js",
-				"start": "yarn build && NODE_ENV=production node index.js",
+				"start": "NODE_ENV=production node index.js",
 				"deploy": "yarn build:webpack && pm2 start pm2.config.js",
 				"seed": "NODE_ENV=development babel-node tools/seeder/seeder.js",
 				"test": "NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/.bin/mocha ./test/**/*.js --exit",
