@@ -9,7 +9,7 @@ chai.use(chaiHttp)
 chai.should()
 
 const userCredentials = {
-  email: 'admin@admin.com',
+  email: 'steven@onion.com',
   password: '12345'
 }
 
