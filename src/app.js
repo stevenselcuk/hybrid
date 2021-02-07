@@ -7,6 +7,7 @@ import rateLimit from 'express-rate-limit'
 import compression from 'compression'
 import morgan from 'morgan'
 import mongoose from 'mongoose'
+import { v4 as uuidv4 } from 'uuid'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import favicon from 'serve-favicon'
@@ -21,9 +22,9 @@ const ExpeditiousCache = require('express-expeditious')
 const swStats = require('swagger-stats')
 const swaggerUi = require('swagger-ui-express')
 const swaggerJsdoc = require('swagger-jsdoc')
-const uuidv1 = require('uuid/v1')
 
-log.info(`Machine ID:  ${uuidv1()}`)
+
+log.info(`Machine ID:  ${uuidv4()}`)
 
 const swaggerDefinition = {
   openapi: '3.0.2',
@@ -86,7 +87,7 @@ const app = express()
 //   })
 // )
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*')
 

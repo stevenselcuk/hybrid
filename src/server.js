@@ -37,7 +37,6 @@ apolloServer.applyMiddleware({
   }
 })
 
-io.origins(['*:*'])
 
 io.on('connection', connSocket => {
   log.info(`🐈 ID: ${connSocket.id} just connected.`)

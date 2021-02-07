@@ -1,132 +1,134 @@
+import { v4 as uuidv4 } from 'uuid'
+
 const mongoose = require('mongoose')
 const mongooseDelete = require('mongoose-delete')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 const mongoosePaginate = require('mongoose-paginate-v2')
-const uuidv1 = require('uuid/v1')
+
 
 const UserSchema = new mongoose.Schema(
   {
     // Indetity
     name: {
       type: String,
-      required: true
+      required: true,
     },
     email: {
       type: String,
       validate: {
         validator: validator.isEmail,
-        message: 'EMAIL_IS_NOT_VALID'
+        message: 'EMAIL_IS_NOT_VALID',
       },
       lowercase: true,
       unique: true,
-      required: true
+      required: true,
     },
     // Work releated
     notifications: [
       {
         notificationID: {
           type: String,
-          default: uuidv1()
+          default: uuidv4(),
         },
         notificationType: {
-          type: String
+          type: String,
         },
         date: {
-          type: Date
+          type: Date,
         },
         readed: {
-          type: Boolean
+          type: Boolean,
         },
         notificationTitle: {
-          type: String
+          type: String,
         },
         notificationContent: {
-          type: String
-        }
-      }
+          type: String,
+        },
+      },
     ],
     tasks: [
       {
         taskID: {
           type: String,
-          default: uuidv1()
+          default: uuidv4(),
         },
         taskType: {
-          type: String
+          type: String,
         },
         date: {
-          type: Date
+          type: Date,
         },
         done: {
-          type: Boolean
+          type: Boolean,
         },
         taskTitle: {
-          type: String
+          type: String,
         },
         taskContent: {
-          type: String
-        }
-      }
+          type: String,
+        },
+      },
     ],
     // Detailed Identity
     details: {
       photo: {
         url: {
-          type: String
-        }
+          type: String,
+        },
       },
       phone: {
-        type: String
+        type: String,
       },
       city: {
-        type: String
+        type: String,
       },
       country: {
-        type: String
+        type: String,
       },
       baseStation: {
-        type: String
-      }
+        type: String,
+      },
     },
     // Security
     password: {
       type: String,
       required: true,
-      select: false
+      select: false,
     },
     role: {
       type: String,
       enum: ['user', 'admin'],
-      default: 'user'
+      default: 'user',
     },
     clerance: [
       {
         type: String,
-        default: undefined
-      }
+        default: undefined,
+      },
     ],
     verification: {
-      type: String
+      type: String,
     },
     verified: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loginAttempts: {
       type: Number,
       default: 0,
-      select: false
+      select: false,
     },
     blockExpires: {
       type: Date,
       default: Date.now,
-      select: false
-    }
+      select: false,
+    },
   },
   {
     versionKey: false,
-    timestamps: true
+    timestamps: true,
   }
 )
 

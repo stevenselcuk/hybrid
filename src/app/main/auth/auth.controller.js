@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import User from '../user/user.model'
 import conf from '~/core/config'
 import {
@@ -10,14 +11,13 @@ import {
   buildSuccObject,
   getIP,
   generateToken,
-  verifyTheToken
+  verifyTheToken,
 } from '~/middleware/utils'
 import { checkPassword } from '~/middleware/auth'
 import { log } from '~/core/logger'
 import { io } from '~/server'
 
 const { matchedData } = require('express-validator')
-const uuid = require('uuid')
 const { addHours } = require('date-fns')
 
 const UserAccess = require('../user/userAccess.model')
@@ -32,20 +32,20 @@ const LOGIN_ATTEMPTS = 5
  * Creates an object with user info
  * @param {Object} req - request object
  */
-const setUserInfo = req => {
+const setUserInfo = (req) => {
   let user = {
     _id: req._id,
     name: req.name,
     email: req.email,
     role: req.role,
     verified: req.verified,
-    clerance: req.clerance
+    clerance: req.clerance,
   }
   // Adds verification for testing purposes
   if (conf.get('IS_DEV')) {
     user = {
       ...user,
-      verification: true
+      verification: true,
     }
   }
   return user
@@ -56,15 +56,14 @@ const setUserInfo = req => {
  * @param {Object} req - request object
  * @param {Object} user - user object
  */
-const saveUserAccessAndReturnToken = async (req, user) => {
-  return new Promise((resolve, reject) => {
+const saveUserAccessAndReturnToken = async (req, user) => new Promise((resolve, reject) => {
     const userAccess = new UserAccess({
       email: user.email,
       ip: getIP(req),
       browser: getBrowserInfo(req),
-      country: getCountry(req)
+      country: getCountry(req),
     })
-    userAccess.save(err => {
+    userAccess.save((err) => {
       if (err) {
         reject(buildErrObject(422, err.message))
       }
@@ -72,18 +71,16 @@ const saveUserAccessAndReturnToken = async (req, user) => {
       log.access(`Signed in:  ${userInfo.name} (${user.email})`)
       resolve({
         token: generateToken(user._id),
-        user: userInfo
+        user: userInfo,
       })
     })
   })
-}
 
 /**
  * Blocks a user by setting blockExpires to the specified date based on constant HOURS_TO_BLOCK
  * @param {Object} user - user object
  */
-const blockUser = async user => {
-  return new Promise((resolve, reject) => {
+const blockUser = async (user) => new Promise((resolve, reject) => {
     user.blockExpires = addHours(new Date(), HOURS_TO_BLOCK) //eslint-disable-line
     user.save((err, result) => {
       if (err) {
@@ -94,14 +91,12 @@ const blockUser = async user => {
       }
     })
   })
-}
 
 /**
  * Saves login attempts to dabatabse
  * @param {Object} user - user object
  */
-const saveLoginAttemptsToDB = async user => {
-  return new Promise((resolve, reject) => {
+const saveLoginAttemptsToDB = async (user) => new Promise((resolve, reject) => {
     user.save((err, result) => {
       if (err) {
         reject(buildErrObject(422, err.message))
@@ -111,21 +106,19 @@ const saveLoginAttemptsToDB = async user => {
       }
     })
   })
-}
 
 /**
  * Checks that login attempts are greater than specified in constant and also that blockexpires is less than now
  * @param {Object} user - user object
  */
-const blockIsExpired = user =>
+const blockIsExpired = (user) =>
   user.loginAttempts > LOGIN_ATTEMPTS && user.blockExpires <= new Date()
 
 /**
  *
  * @param {Object} user - user object.
  */
-const checkLoginAttemptsAndBlockExpires = async user => {
-  return new Promise((resolve, reject) => {
+const checkLoginAttemptsAndBlockExpires = async (user) => new Promise((resolve, reject) => {
     // Let user try to login again after blockexpires, resets user loginAttempts
     if (blockIsExpired(user)) {
       user.loginAttempts = 0 // eslint-disable-line
@@ -142,30 +135,26 @@ const checkLoginAttemptsAndBlockExpires = async user => {
       resolve(true)
     }
   })
-}
 
 /**
  * Checks if blockExpires from user is greater than now
  * @param {Object} user - user object
  */
-const userIsBlocked = async user => {
-  return new Promise((resolve, reject) => {
+const userIsBlocked = async (user) => new Promise((resolve, reject) => {
     if (user.blockExpires > new Date()) {
       reject(buildErrObject(409, 'You are blocked due to too many request'))
     }
     resolve(true)
   })
-}
 
 /**
  * Finds user by email
  * @param {string} email - user´s email
  */
-const findUser = async email => {
-  return new Promise((resolve, reject) => {
+const findUser = async (email) => new Promise((resolve, reject) => {
     User.findOne(
       {
-        email
+        email,
       },
       'password loginAttempts blockExpires name email role verified verification clerance',
       (err, item) => {
@@ -174,26 +163,23 @@ const findUser = async email => {
       }
     )
   })
-}
 
 /**
  * Finds user by ID
  * @param {string} id - user´s id
  */
-const findUserById = async userId => {
-  return new Promise((resolve, reject) => {
+const findUserById = async (userId) => new Promise((resolve, reject) => {
     User.findById(userId, (err, item) => {
       itemNotFound(err, item, reject, 'USER_DOES_NOT_EXIST')
       resolve(item)
     })
   })
-}
 
 /**
  * Adds one attempt to loginAttempts, then compares loginAttempts with the constant LOGIN_ATTEMPTS, if is less returns wrong password, else returns blockUser function
  * @param {Object} user - user object
  */
-const passwordsDoNotMatch = async user => {
+const passwordsDoNotMatch = async (user) => {
   user.loginAttempts += 1 //eslint-disable-line
   await saveLoginAttemptsToDB(user)
   return new Promise((resolve, reject) => {
@@ -211,8 +197,7 @@ const passwordsDoNotMatch = async user => {
  * @param {Object} req - request object
  * @param {Object} forgot - forgot object
  */
-const markResetPasswordAsUsed = async (req, forgot) => {
-  return new Promise((resolve, reject) => {
+const markResetPasswordAsUsed = async (req, forgot) => new Promise((resolve, reject) => {
     forgot.used = true //eslint-disable-line
     forgot.ipChanged = getIP(req) //eslint-disable-line
     forgot.browserChanged = getBrowserInfo(req) //eslint-disable-line
@@ -222,32 +207,28 @@ const markResetPasswordAsUsed = async (req, forgot) => {
       resolve(buildSuccObject('PASSWORD_CHANGED'))
     })
   })
-}
 
 /**
  * Updates a user password in database
  * @param {string} password - new password
  * @param {Object} user - user object
  */
-const updatePassword = async (password, user) => {
-  return new Promise((resolve, reject) => {
+const updatePassword = async (password, user) => new Promise((resolve, reject) => {
     user.password = password //eslint-disable-line
     user.save((err, item) => {
       itemNotFound(err, item, reject, 'NOT_FOUND')
       resolve(item)
     })
   })
-}
 
 /**
  * Finds user by email to reset password
  * @param {string} email - user email
  */
-const findUserToResetPassword = async email => {
-  return new Promise((resolve, reject) => {
+const findUserToResetPassword = async (email) => new Promise((resolve, reject) => {
     User.findOne(
       {
-        email
+        email,
       },
       (err, user) => {
         itemNotFound(err, user, reject, 'NOT_FOUND')
@@ -255,18 +236,16 @@ const findUserToResetPassword = async email => {
       }
     )
   })
-}
 
 /**
  * Checks if a forgot password verification exists
  * @param {string} id - verification id
  */
-const findForgotPassword = async id => {
-  return new Promise((resolve, reject) => {
+const findForgotPassword = async (id) => new Promise((resolve, reject) => {
     ForgotPassword.findOne(
       {
         verification: id,
-        used: false
+        used: false,
       },
       (err, item) => {
         itemNotFound(err, item, reject, 'NOT_FOUND_OR_ALREADY_USED')
@@ -274,20 +253,18 @@ const findForgotPassword = async id => {
       }
     )
   })
-}
 
 /**
  * Creates a new password forgot
  * @param {Object} req - request object
  */
-const saveForgotPassword = async req => {
-  return new Promise((resolve, reject) => {
+const saveForgotPassword = async (req) => new Promise((resolve, reject) => {
     const forgot = new ForgotPassword({
       email: req.body.email,
-      verification: uuid.v4(),
+      verification: uuidv4(),
       ipRequest: getIP(req),
       browserRequest: getBrowserInfo(req),
-      countryRequest: getCountry(req)
+      countryRequest: getCountry(req),
     })
     forgot.save((err, item) => {
       if (err) {
@@ -296,21 +273,20 @@ const saveForgotPassword = async req => {
       resolve(item)
     })
   })
-}
 
 /**
  * Builds an object with created forgot password object, if env is development or testing exposes the verification
  * @param {Object} item - created forgot password object
  */
-const forgotPasswordResponse = item => {
+const forgotPasswordResponse = (item) => {
   let data = {
     msg: 'RESET_EMAIL_SENT',
-    email: item.email
+    email: item.email,
   }
   if (conf.get('IS_DEV')) {
     data = {
       ...data,
-      verification: item.verification
+      verification: item.verification,
     }
   }
   return data
@@ -321,8 +297,7 @@ const forgotPasswordResponse = item => {
  * @param {Object} data - data object
  * @param {*} next - next callback
  */
-const checkPermissions = async (data, next) => {
-  return new Promise((resolve, reject) => {
+const checkPermissions = async (data, next) => new Promise((resolve, reject) => {
     User.findById(data.id, (err, result) => {
       itemNotFound(err, result, reject, 'NOT_FOUND')
       if (data.roles.indexOf(result.role) > -1 && result.verified) {
@@ -331,7 +306,6 @@ const checkPermissions = async (data, next) => {
       return reject(buildErrObject(401, 'UNAUTHORIZED ACCESS'))
     })
   })
-}
 
 /**
  * Login function called by route
@@ -356,7 +330,7 @@ export const login = async (req, res) => {
       res.cookie('jwt', result.token, {
         signed: true,
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        httpOnly: true
+        httpOnly: true,
       })
       log.info('New cookie has cooked 🍪')
       req.session.user = result.user
@@ -432,7 +406,6 @@ export const getRefreshToken = async (req, res) => {
  * @param {Object} res - response object
  */
 export const qrLogin = async (req, res) => {
-
   try {
     let userId = await verifyTheToken(req.body.jwt)
     userId = await isIDGood(userId)
@@ -440,12 +413,12 @@ export const qrLogin = async (req, res) => {
     const clientId = req.body.client
     const send = {
       user,
-      token: req.body.jwt
+      token: req.body.jwt,
     }
     io.to(`${clientId}`).emit('qrLogin', send)
     res.status(200).json(user)
   } catch (error) {
-   console.log(error)
+    console.log(error)
     handleError(res, error)
   }
 }
@@ -454,11 +427,11 @@ export const qrLogin = async (req, res) => {
  * Roles authorization function called by route
  * @param {Array} roles - roles specified on the route
  */
-export const onlyCanUse = roles => async (req, res, next) => {
+export const onlyCanUse = (roles) => async (req, res, next) => {
   try {
     const data = {
       id: req.user._id,
-      roles
+      roles,
     }
     await checkPermissions(data, next)
   } catch (error) {

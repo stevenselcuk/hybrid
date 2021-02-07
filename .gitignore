@@ -4,8 +4,8 @@
 node_modules
 # Not my .env config
 .env
-# Not my config.js
-config.json
+# Not my config.js (Left for dev purposes be careful!
+# config.json
 # Not production ready files
 dist
 build
