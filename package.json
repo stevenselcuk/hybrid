@@ -83,7 +83,7 @@
 				"http": "^0.0.1-security",
 				"i18n": "^0.13.2",
 				"ioredis": "^4.22.0",
-				"jsonwebtoken": "^8.5.1",
+				"jsonwebtoken": "^9.0.0",
 				"lodash": "^4.17.20",
 				"merge-graphql-schemas": "^1.7.8",
 				"moment": "^2.29.1",
